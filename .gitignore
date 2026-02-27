@@ -1,0 +1,22 @@
+# Virtual Environment
+venv/
+.env
+.electricity/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Data (Ignore large raw files, keep the small app_database)
+data/electricity/.ipynb_checkpoints/
+!app_assets/app_database.csv
+.ipynb_checkpoints/
+#extra files
+EDA.ipynb
+
+# Models (Keep the small .pkl files)
+!app_assets/*.pkl
+
+# Streamlit/OS junk
+.streamlit/
+.DS_Store

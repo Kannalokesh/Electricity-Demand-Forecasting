@@ -1,0 +1,1 @@
+["precipitation", "temperature", "dew_point_temperature", "humidity", "wind_speed", "snowfall", "hour", "dayofweek", "month", "hour_sin", "hour_cos", "month_sin", "month_cos", "is_holiday", "is_weekend", "HDD", "CDD", "lag_24", "lag_48", "lag_168", "rolling_mean_24h_lagged"]
