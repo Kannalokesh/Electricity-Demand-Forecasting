@@ -6,8 +6,8 @@ An enterprise-grade Machine Learning solution for predicting regional electricit
 Electricity cannot be stored easily. Grid operators must perfectly balance supply and demand to avoid blackouts and minimize costs. This tool provides a **Day-Ahead Forecast** with **Uncertainty Bands**, allowing operators to schedule power plants and manage "Spinning Reserves" efficiently.
 
 ## 🎬 System Walkthrough
-<!-- DRAG AND DROP YOUR VIDEO FILE HERE -->
 
+https://github.com/user-attachments/assets/85f77193-dfd8-4757-a842-715ebceae8b2
 
 ## 🛠️ Technical Highlights
 - **Architecture:** Probabilistic Quantile Regression using LightGBM.
