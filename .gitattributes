@@ -1,0 +1,5 @@
+# Treat all Jupyter Notebooks as documentation (hides them from language stats)
+*.ipynb linguist-documentation=true
+
+# Alternatively, you can just tell GitHub not to detect them at all
+# *.ipynb linguist-detectable=false
