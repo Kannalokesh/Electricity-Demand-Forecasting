@@ -11,9 +11,11 @@ __pycache__/
 data/electricity/.ipynb_checkpoints/
 !app_assets/app_database.csv
 .ipynb_checkpoints/
+
 #extra files
 EDA.ipynb
-
+weather_service.py
+demo/
 # Models (Keep the small .pkl files)
 !app_assets/*.pkl
 

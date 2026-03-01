@@ -1,3 +1,4 @@
+
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -106,11 +107,21 @@ if run_forecast:
         st.markdown(f"**Target Jurisdiction:** Kansai Electric Power | **Forecast Date:** {selected_date}")
 
         # KPI Metrics
+        #  Find the index (the timestamp) where the maximum risk (Q90) occurs
+        peak_idx = np.argmax(pred_q90)
+        peak_timestamp = day_data.index[peak_idx]
+
+        # Extract the temperature at that specific peak hour
+        temp_at_peak = day_data.iloc[peak_idx]['temperature']
+
+        #  Update your KPI columns
         col1, col2, col3, col4 = st.columns(4)
-        col1.metric("Peak Expected Demand", f"{int(pred_q50.max())}")
-        col2.metric("Maximum Risk Demand", f"{int(pred_q90.max())}")
-        col3.metric("Time of Peak Demand", day_data.index[np.argmax(pred_q90)].strftime('%H:00'))
-        col4.metric("Avg Regional Temp", f"{day_data['temperature'].mean():.1f} °C")
+
+        col1.metric("Peak Expected Demand", f"{int(pred_q50.max())} MW")
+        col2.metric("Maximum Risk Demand", f"{int(pred_q90.max())} MW")
+        col3.metric("Time of Peak Demand", peak_timestamp.strftime('%H:00'))
+        col4.metric("Temp at Peak Hour", f"{temp_at_peak:.1f} °C", 
+                    delta=f"{temp_modifier}°C Sim" if temp_modifier != 0 else None)
 
         st.markdown("---")
 
@@ -202,3 +213,4 @@ else:
         "Features": feature_cols,
         "Horizon": "24-Hours Day Ahead"
     })
+
